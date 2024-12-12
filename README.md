@@ -20,8 +20,8 @@ Following [SDCL](https://github.com/yangbincv/SDCL), we adopt the self-supervise
 # Models
 | Datestes                   | Rank-1 | mAP  | Download                                                          |
 |----------------------------|--------|------|-------------------------------------------------------------------|
-| SYSU-MM01 (All Search)     | 65.07  |62.79 | [model](https://pan.baidu.com/s/1FzC5mpVc3X-CyHGI23jeQQ?pwd=0000) |
-| RegDB (Visible to Infrared)| 92.96  |86.32 | [model](https://pan.baidu.com/s/1WADGR2Vbhrz-GBfq9Ljdng?pwd=0000) |
+| SYSU-MM01 (All Search)     | 65.07  |62.79 | [model](https://pan.baidu.com/s/12NLKGZIJ3urq8Q8gGqrJyQ?pwd=0000) |
+| RegDB (Visible to Infrared)| 92.96  |86.32 | [model](https://pan.baidu.com/s/1K9KCIbJRXxRms6J8o_rR3Q?pwd=0000) |
 
 
 # Acknowledgment
