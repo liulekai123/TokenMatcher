@@ -17,6 +17,13 @@ Following [SDCL](https://github.com/yangbincv/SDCL), we adopt the self-supervise
 1. sh run_train_sysu.sh
 2. sh run_train_regdb.sh
 
+# Models
+| Datestes                   | Rank-1 | mAP  | Download                                                          |
+|----------------------------|--------|------|-------------------------------------------------------------------|
+| SYSU-MM01 (All Search)     | 65.07  |62.79 | [model](https://pan.baidu.com/s/1Xacw-UhllmsUxhyor94B1Q?pwd=ak7u) |
+| RegDB (Visible to Infrared)| 92.96  |86.32 | [model](https://pan.baidu.com/s/1PW_8oZhJ-yANVJu3Tno3eQ?pwd=it2q) |
+
+
 # Acknowledgment
 Our implementation is mainly based on the following codebases. We gratefully thank the authors for their wonderful works.
 
