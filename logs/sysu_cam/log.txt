@@ -1,0 +1,278 @@
+==========
+Args:Namespace(arch='vit_base', batch_size=128, cam_id=4, cls_token_num=4, conv_stem=True, data_dir='/scratch/chenjun3/liulekai/ADCA/data/sysu', dataset='sysu_all', drop_path_rate0=0.3, drop_path_rate1=0.3, dropout=0, epochs=20, eps=0.6, eps_gap=0.02, eval_step=1, features=0, height=384, hw_ratio=2, iters=200, k=0.9, k1=30, k2=6, lamba_cross=0.4, lamba_mate=0.0, logs_dir='/scratch/chenjun3/liulekai/PGM-ReID-main/logs', lr0=0.00035, lr1=3.5e-05, momentum0=0.2, momentum1=0.8, no_cam=False, num_instances=16, pooling_type='gem', pretrained_path='/scratch/chenjun3/liulekai/PGM-ReID-main/examples/pretrained/vit_base_ics_cfs_lup.pth', print_freq=20, seed=1, self_norm=True, step_size=20, temp=0.05, test_batch=64, use_hard=False, weight_decay0=0.0005, weight_decay1=0.0005, width=128, workers=8, x=2)
+==========
+==> Load unlabeled dataset
+=> sysu_ir loaded
+Dataset statistics:
+  ----------------------------------------
+  subset   | # ids | # images | # cameras
+  ----------------------------------------
+  train    |   395 |    11909 |         2
+  query    |    96 |      384 |         2
+  gallery  |    96 |     3419 |         2
+  ----------------------------------------
+=> sysu_rgb loaded
+Dataset statistics:
+  ----------------------------------------
+  subset   | # ids | # images | # cameras
+  ----------------------------------------
+  train    |   395 |    22258 |         4
+  query    |    96 |      384 |         3
+  gallery  |    96 |     6391 |         4
+  ----------------------------------------
+using drop_out rate is : 0.0
+using attn_drop_out rate is : 0.0
+using drop_path rate is : 0.3
+Resized position embedding from size:torch.Size([1, 129, 768]) to size: torch.Size([1, 196, 768]) with height:24 width: 8
+Load 196 / 201 layers.
+RGB Clustering criterion: eps: 0.500
+==> Create pseudo labels for camera4 unlabeled RGB data
+Extract Features: [50/94]	Time 0.292 (0.605)	Data 0.000 (0.089)	
+Computing jaccard distance...
+Jaccard distance computing time cost: 7.521246910095215
+==> Statistics for RGB epoch 0 cam4: 394 clusters
+Epoch: [0][10/50]	Time 0.484 (0.782)	Data 0.001 (0.192)	Loss 1.531 (1.787)	Loss cam 1.514	Dissimilar LOSS 0.017	
+Epoch: [0][20/50]	Time 0.559 (0.639)	Data 0.001 (0.096)	Loss 1.576 (1.672)	Loss cam 1.555	Dissimilar LOSS 0.021	
+Epoch: [0][30/50]	Time 0.528 (0.589)	Data 0.001 (0.064)	Loss 1.536 (1.590)	Loss cam 1.518	Dissimilar LOSS 0.019	
+Epoch: [0][40/50]	Time 0.465 (0.560)	Data 0.000 (0.048)	Loss 1.154 (1.508)	Loss cam 1.137	Dissimilar LOSS 0.018	
+Epoch: [0][50/50]	Time 5.807 (0.654)	Data 5.308 (0.145)	Loss 4.252 (1.528)	Loss cam 4.234	Dissimilar LOSS 0.017	
+RGB Clustering criterion: eps: 0.500
+==> Create pseudo labels for camera4 unlabeled RGB data
+Extract Features: [50/94]	Time 0.299 (0.399)	Data 0.000 (0.060)	
+Computing jaccard distance...
+Jaccard distance computing time cost: 7.697076320648193
+==> Statistics for RGB epoch 1 cam4: 376 clusters
+Epoch: [1][10/50]	Time 0.480 (0.714)	Data 0.001 (0.184)	Loss 1.743 (1.634)	Loss cam 1.722	Dissimilar LOSS 0.020	
+Epoch: [1][20/50]	Time 0.479 (0.602)	Data 0.001 (0.093)	Loss 1.435 (1.573)	Loss cam 1.414	Dissimilar LOSS 0.021	
+Epoch: [1][30/50]	Time 0.491 (0.562)	Data 0.001 (0.062)	Loss 1.832 (1.518)	Loss cam 1.813	Dissimilar LOSS 0.020	
+Epoch: [1][40/50]	Time 0.453 (0.544)	Data 0.000 (0.047)	Loss 1.064 (1.473)	Loss cam 1.047	Dissimilar LOSS 0.016	
+Epoch: [1][50/50]	Time 0.473 (0.626)	Data 0.001 (0.126)	Loss 4.490 (1.623)	Loss cam 4.474	Dissimilar LOSS 0.016	
+RGB Clustering criterion: eps: 0.500
+==> Create pseudo labels for camera4 unlabeled RGB data
+Extract Features: [50/94]	Time 0.313 (0.393)	Data 0.000 (0.062)	
+Computing jaccard distance...
+Jaccard distance computing time cost: 7.298059463500977
+==> Statistics for RGB epoch 2 cam4: 375 clusters
+Epoch: [2][10/50]	Time 0.511 (0.629)	Data 0.001 (0.124)	Loss 1.352 (1.485)	Loss cam 1.324	Dissimilar LOSS 0.028	
+Epoch: [2][20/50]	Time 0.471 (0.560)	Data 0.001 (0.062)	Loss 1.336 (1.452)	Loss cam 1.317	Dissimilar LOSS 0.018	
+Epoch: [2][30/50]	Time 0.614 (0.537)	Data 0.001 (0.042)	Loss 1.018 (1.447)	Loss cam 0.997	Dissimilar LOSS 0.021	
+Epoch: [2][40/50]	Time 0.500 (0.524)	Data 0.000 (0.032)	Loss 1.367 (1.416)	Loss cam 1.349	Dissimilar LOSS 0.018	
+Epoch: [2][50/50]	Time 0.448 (0.613)	Data 0.001 (0.122)	Loss 4.041 (1.580)	Loss cam 4.022	Dissimilar LOSS 0.019	
+RGB Clustering criterion: eps: 0.500
+==> Create pseudo labels for camera4 unlabeled RGB data
+Extract Features: [50/94]	Time 0.264 (0.402)	Data 0.000 (0.072)	
+Computing jaccard distance...
+Jaccard distance computing time cost: 7.401819229125977
+==> Statistics for RGB epoch 3 cam4: 366 clusters
+Epoch: [3][10/50]	Time 0.463 (0.667)	Data 0.001 (0.168)	Loss 1.782 (1.487)	Loss cam 1.765	Dissimilar LOSS 0.018	
+Epoch: [3][20/50]	Time 0.509 (0.570)	Data 0.001 (0.084)	Loss 1.068 (1.448)	Loss cam 1.049	Dissimilar LOSS 0.019	
+Epoch: [3][30/50]	Time 0.472 (0.540)	Data 0.001 (0.057)	Loss 1.501 (1.457)	Loss cam 1.483	Dissimilar LOSS 0.019	
+Epoch: [3][40/50]	Time 0.495 (0.532)	Data 0.000 (0.042)	Loss 0.774 (1.392)	Loss cam 0.758	Dissimilar LOSS 0.016	
+Epoch: [3][50/50]	Time 0.524 (0.623)	Data 0.000 (0.130)	Loss 4.132 (1.606)	Loss cam 4.114	Dissimilar LOSS 0.019	
+RGB Clustering criterion: eps: 0.500
+==> Create pseudo labels for camera4 unlabeled RGB data
+Extract Features: [50/94]	Time 0.319 (0.395)	Data 0.000 (0.062)	
+Computing jaccard distance...
+Jaccard distance computing time cost: 7.2965710163116455
+==> Statistics for RGB epoch 4 cam4: 359 clusters
+Epoch: [4][10/50]	Time 0.460 (0.644)	Data 0.001 (0.144)	Loss 1.228 (1.598)	Loss cam 1.209	Dissimilar LOSS 0.019	
+Epoch: [4][20/50]	Time 0.493 (0.559)	Data 0.001 (0.073)	Loss 1.464 (1.504)	Loss cam 1.446	Dissimilar LOSS 0.018	
+Epoch: [4][30/50]	Time 0.494 (0.535)	Data 0.000 (0.049)	Loss 1.469 (1.433)	Loss cam 1.450	Dissimilar LOSS 0.019	
+Epoch: [4][40/50]	Time 0.511 (0.529)	Data 0.000 (0.037)	Loss 0.996 (1.386)	Loss cam 0.980	Dissimilar LOSS 0.016	
+Epoch: [4][50/50]	Time 0.462 (0.628)	Data 0.001 (0.135)	Loss 4.593 (1.703)	Loss cam 4.574	Dissimilar LOSS 0.019	
+RGB Clustering criterion: eps: 0.500
+==> Create pseudo labels for camera4 unlabeled RGB data
+Extract Features: [50/94]	Time 0.308 (0.394)	Data 0.000 (0.062)	
+Computing jaccard distance...
+Jaccard distance computing time cost: 7.4015491008758545
+==> Statistics for RGB epoch 5 cam4: 357 clusters
+Epoch: [5][10/50]	Time 0.486 (0.623)	Data 0.001 (0.142)	Loss 1.095 (1.670)	Loss cam 1.073	Dissimilar LOSS 0.021	
+Epoch: [5][20/50]	Time 0.478 (0.549)	Data 0.001 (0.071)	Loss 1.093 (1.549)	Loss cam 1.072	Dissimilar LOSS 0.021	
+Epoch: [5][30/50]	Time 0.479 (0.534)	Data 0.000 (0.048)	Loss 1.408 (1.466)	Loss cam 1.393	Dissimilar LOSS 0.015	
+Epoch: [5][40/50]	Time 0.508 (0.519)	Data 0.000 (0.036)	Loss 0.975 (1.389)	Loss cam 0.955	Dissimilar LOSS 0.020	
+Epoch: [5][50/50]	Time 0.517 (0.610)	Data 0.002 (0.123)	Loss 4.313 (1.718)	Loss cam 4.292	Dissimilar LOSS 0.020	
+RGB Clustering criterion: eps: 0.500
+==> Create pseudo labels for camera4 unlabeled RGB data
+Extract Features: [50/94]	Time 0.306 (0.397)	Data 0.000 (0.074)	
+Computing jaccard distance...
+Jaccard distance computing time cost: 7.401716232299805
+==> Statistics for RGB epoch 6 cam4: 354 clusters
+Epoch: [6][10/50]	Time 0.453 (0.627)	Data 0.001 (0.138)	Loss 1.051 (1.367)	Loss cam 1.029	Dissimilar LOSS 0.022	
+Epoch: [6][20/50]	Time 0.527 (0.557)	Data 0.001 (0.069)	Loss 1.162 (1.438)	Loss cam 1.144	Dissimilar LOSS 0.018	
+Epoch: [6][30/50]	Time 0.574 (0.534)	Data 0.000 (0.046)	Loss 1.146 (1.403)	Loss cam 1.127	Dissimilar LOSS 0.018	
+Epoch: [6][40/50]	Time 0.492 (0.519)	Data 0.000 (0.035)	Loss 1.205 (1.325)	Loss cam 1.187	Dissimilar LOSS 0.018	
+Epoch: [6][50/50]	Time 0.496 (0.595)	Data 0.001 (0.107)	Loss 3.907 (1.645)	Loss cam 3.889	Dissimilar LOSS 0.018	
+RGB Clustering criterion: eps: 0.500
+==> Create pseudo labels for camera4 unlabeled RGB data
+Extract Features: [50/94]	Time 0.336 (0.417)	Data 0.003 (0.092)	
+Computing jaccard distance...
+Jaccard distance computing time cost: 8.653145790100098
+==> Statistics for RGB epoch 7 cam4: 355 clusters
+Epoch: [7][10/50]	Time 0.518 (0.617)	Data 0.001 (0.122)	Loss 1.600 (1.552)	Loss cam 1.584	Dissimilar LOSS 0.017	
+Epoch: [7][20/50]	Time 0.540 (0.554)	Data 0.001 (0.061)	Loss 1.340 (1.463)	Loss cam 1.319	Dissimilar LOSS 0.022	
+Epoch: [7][30/50]	Time 0.441 (0.526)	Data 0.000 (0.041)	Loss 1.056 (1.418)	Loss cam 1.036	Dissimilar LOSS 0.020	
+Epoch: [7][40/50]	Time 0.470 (0.514)	Data 0.000 (0.031)	Loss 0.982 (1.334)	Loss cam 0.965	Dissimilar LOSS 0.017	
+Epoch: [7][50/50]	Time 0.469 (0.608)	Data 0.001 (0.123)	Loss 3.951 (1.589)	Loss cam 3.933	Dissimilar LOSS 0.019	
+RGB Clustering criterion: eps: 0.500
+==> Create pseudo labels for camera4 unlabeled RGB data
+Extract Features: [50/94]	Time 0.342 (0.401)	Data 0.000 (0.080)	
+Computing jaccard distance...
+Jaccard distance computing time cost: 7.561268329620361
+==> Statistics for RGB epoch 8 cam4: 354 clusters
+Epoch: [8][10/50]	Time 0.534 (0.628)	Data 0.001 (0.127)	Loss 2.478 (1.524)	Loss cam 2.454	Dissimilar LOSS 0.024	
+Epoch: [8][20/50]	Time 0.519 (0.553)	Data 0.001 (0.064)	Loss 1.075 (1.414)	Loss cam 1.054	Dissimilar LOSS 0.021	
+Epoch: [8][30/50]	Time 0.509 (0.535)	Data 0.000 (0.043)	Loss 1.298 (1.397)	Loss cam 1.278	Dissimilar LOSS 0.020	
+Epoch: [8][40/50]	Time 0.523 (0.528)	Data 0.000 (0.032)	Loss 1.157 (1.299)	Loss cam 1.133	Dissimilar LOSS 0.024	
+Epoch: [8][50/50]	Time 0.489 (0.617)	Data 0.001 (0.119)	Loss 3.915 (1.583)	Loss cam 3.895	Dissimilar LOSS 0.020	
+RGB Clustering criterion: eps: 0.500
+==> Create pseudo labels for camera4 unlabeled RGB data
+Extract Features: [50/94]	Time 0.319 (0.394)	Data 0.000 (0.069)	
+Computing jaccard distance...
+Jaccard distance computing time cost: 8.632659196853638
+==> Statistics for RGB epoch 9 cam4: 350 clusters
+Epoch: [9][10/50]	Time 0.485 (0.615)	Data 0.001 (0.136)	Loss 1.298 (1.553)	Loss cam 1.277	Dissimilar LOSS 0.021	
+Epoch: [9][20/50]	Time 0.481 (0.554)	Data 0.001 (0.068)	Loss 1.270 (1.503)	Loss cam 1.250	Dissimilar LOSS 0.020	
+Epoch: [9][30/50]	Time 0.472 (0.534)	Data 0.000 (0.046)	Loss 0.736 (1.376)	Loss cam 0.719	Dissimilar LOSS 0.017	
+Epoch: [9][40/50]	Time 0.462 (0.519)	Data 0.000 (0.034)	Loss 1.237 (1.302)	Loss cam 1.215	Dissimilar LOSS 0.021	
+Epoch: [9][50/50]	Time 0.494 (0.619)	Data 0.001 (0.131)	Loss 3.878 (1.646)	Loss cam 3.860	Dissimilar LOSS 0.019	
+RGB Clustering criterion: eps: 0.500
+==> Create pseudo labels for camera4 unlabeled RGB data
+Extract Features: [50/94]	Time 0.361 (0.452)	Data 0.000 (0.065)	
+Computing jaccard distance...
+Jaccard distance computing time cost: 7.411779880523682
+==> Statistics for RGB epoch 10 cam4: 342 clusters
+Epoch: [10][10/50]	Time 0.494 (0.726)	Data 0.001 (0.217)	Loss 1.411 (1.441)	Loss cam 1.391	Dissimilar LOSS 0.021	
+Epoch: [10][20/50]	Time 0.481 (0.609)	Data 0.001 (0.109)	Loss 1.434 (1.371)	Loss cam 1.415	Dissimilar LOSS 0.019	
+Epoch: [10][30/50]	Time 0.504 (0.571)	Data 0.000 (0.073)	Loss 1.304 (1.291)	Loss cam 1.280	Dissimilar LOSS 0.023	
+Epoch: [10][40/50]	Time 0.450 (0.545)	Data 0.000 (0.055)	Loss 0.840 (1.226)	Loss cam 0.820	Dissimilar LOSS 0.020	
+Epoch: [10][50/50]	Time 0.499 (0.631)	Data 0.001 (0.137)	Loss 3.559 (1.631)	Loss cam 3.541	Dissimilar LOSS 0.018	
+
+ * Finished epoch  10  silhouette: 74.0%  best: 74.0% ****************
+
+RGB Clustering criterion: eps: 0.500
+==> Create pseudo labels for camera4 unlabeled RGB data
+Extract Features: [50/94]	Time 0.274 (0.418)	Data 0.000 (0.083)	
+Computing jaccard distance...
+Jaccard distance computing time cost: 7.331339359283447
+==> Statistics for RGB epoch 11 cam4: 348 clusters
+Epoch: [11][10/50]	Time 0.463 (0.637)	Data 0.001 (0.139)	Loss 1.493 (1.349)	Loss cam 1.467	Dissimilar LOSS 0.026	
+Epoch: [11][20/50]	Time 0.479 (0.556)	Data 0.004 (0.070)	Loss 1.077 (1.328)	Loss cam 1.056	Dissimilar LOSS 0.021	
+Epoch: [11][30/50]	Time 0.456 (0.533)	Data 0.000 (0.047)	Loss 0.950 (1.251)	Loss cam 0.934	Dissimilar LOSS 0.016	
+Epoch: [11][40/50]	Time 0.459 (0.526)	Data 0.000 (0.035)	Loss 1.029 (1.220)	Loss cam 1.011	Dissimilar LOSS 0.018	
+Epoch: [11][50/50]	Time 0.465 (0.608)	Data 0.001 (0.117)	Loss 4.265 (1.573)	Loss cam 4.247	Dissimilar LOSS 0.018	
+
+ * Finished epoch  11  silhouette: 74.9%  best: 74.9% ****************
+
+RGB Clustering criterion: eps: 0.500
+==> Create pseudo labels for camera4 unlabeled RGB data
+Extract Features: [50/94]	Time 0.306 (0.393)	Data 0.000 (0.068)	
+Computing jaccard distance...
+Jaccard distance computing time cost: 7.482447385787964
+==> Statistics for RGB epoch 12 cam4: 346 clusters
+Epoch: [12][10/50]	Time 0.568 (0.669)	Data 0.001 (0.160)	Loss 1.679 (1.394)	Loss cam 1.657	Dissimilar LOSS 0.022	
+Epoch: [12][20/50]	Time 0.459 (0.577)	Data 0.001 (0.081)	Loss 1.079 (1.379)	Loss cam 1.057	Dissimilar LOSS 0.023	
+Epoch: [12][30/50]	Time 0.458 (0.550)	Data 0.000 (0.054)	Loss 0.854 (1.326)	Loss cam 0.836	Dissimilar LOSS 0.019	
+Epoch: [12][40/50]	Time 0.477 (0.533)	Data 0.000 (0.041)	Loss 0.814 (1.261)	Loss cam 0.799	Dissimilar LOSS 0.016	
+Epoch: [12][50/50]	Time 0.586 (0.617)	Data 0.001 (0.122)	Loss 3.857 (1.594)	Loss cam 3.838	Dissimilar LOSS 0.019	
+
+ * Finished epoch  12  silhouette: 75.2%  best: 75.2% ****************
+
+RGB Clustering criterion: eps: 0.500
+==> Create pseudo labels for camera4 unlabeled RGB data
+Extract Features: [50/94]	Time 0.294 (0.393)	Data 0.000 (0.065)	
+Computing jaccard distance...
+Jaccard distance computing time cost: 7.208286285400391
+==> Statistics for RGB epoch 13 cam4: 342 clusters
+Epoch: [13][10/50]	Time 0.464 (0.659)	Data 0.001 (0.157)	Loss 1.759 (1.324)	Loss cam 1.734	Dissimilar LOSS 0.025	
+Epoch: [13][20/50]	Time 0.498 (0.576)	Data 0.001 (0.079)	Loss 1.459 (1.341)	Loss cam 1.439	Dissimilar LOSS 0.020	
+Epoch: [13][30/50]	Time 0.482 (0.545)	Data 0.000 (0.053)	Loss 1.200 (1.281)	Loss cam 1.180	Dissimilar LOSS 0.019	
+Epoch: [13][40/50]	Time 0.583 (0.533)	Data 0.000 (0.040)	Loss 0.993 (1.229)	Loss cam 0.975	Dissimilar LOSS 0.018	
+Epoch: [13][50/50]	Time 0.472 (0.626)	Data 0.001 (0.132)	Loss 3.321 (1.631)	Loss cam 3.305	Dissimilar LOSS 0.016	
+
+ * Finished epoch  13  silhouette: 75.5%  best: 75.5% ****************
+
+RGB Clustering criterion: eps: 0.500
+==> Create pseudo labels for camera4 unlabeled RGB data
+Extract Features: [50/94]	Time 0.310 (0.408)	Data 0.000 (0.075)	
+Computing jaccard distance...
+Jaccard distance computing time cost: 7.328083276748657
+==> Statistics for RGB epoch 14 cam4: 342 clusters
+Epoch: [14][10/50]	Time 0.473 (0.627)	Data 0.001 (0.133)	Loss 1.657 (1.473)	Loss cam 1.638	Dissimilar LOSS 0.019	
+Epoch: [14][20/50]	Time 0.439 (0.556)	Data 0.001 (0.067)	Loss 0.996 (1.356)	Loss cam 0.973	Dissimilar LOSS 0.022	
+Epoch: [14][30/50]	Time 0.459 (0.529)	Data 0.000 (0.045)	Loss 0.940 (1.302)	Loss cam 0.920	Dissimilar LOSS 0.020	
+Epoch: [14][40/50]	Time 0.477 (0.514)	Data 0.000 (0.034)	Loss 1.031 (1.241)	Loss cam 1.010	Dissimilar LOSS 0.021	
+Epoch: [14][50/50]	Time 0.502 (0.625)	Data 0.001 (0.141)	Loss 4.751 (1.666)	Loss cam 4.728	Dissimilar LOSS 0.023	
+
+ * Finished epoch  14  silhouette: 75.8%  best: 75.8% ****************
+
+RGB Clustering criterion: eps: 0.500
+==> Create pseudo labels for camera4 unlabeled RGB data
+Extract Features: [50/94]	Time 0.331 (0.416)	Data 0.000 (0.078)	
+Computing jaccard distance...
+Jaccard distance computing time cost: 7.370793581008911
+==> Statistics for RGB epoch 15 cam4: 343 clusters
+Epoch: [15][10/50]	Time 0.473 (0.647)	Data 0.001 (0.147)	Loss 0.973 (1.411)	Loss cam 0.952	Dissimilar LOSS 0.021	
+Epoch: [15][20/50]	Time 0.493 (0.564)	Data 0.000 (0.074)	Loss 0.989 (1.334)	Loss cam 0.964	Dissimilar LOSS 0.025	
+Epoch: [15][30/50]	Time 0.501 (0.538)	Data 0.000 (0.050)	Loss 1.039 (1.283)	Loss cam 1.022	Dissimilar LOSS 0.017	
+Epoch: [15][40/50]	Time 0.509 (0.530)	Data 0.000 (0.037)	Loss 1.073 (1.223)	Loss cam 1.055	Dissimilar LOSS 0.019	
+Epoch: [15][50/50]	Time 0.490 (0.617)	Data 0.001 (0.122)	Loss 3.873 (1.687)	Loss cam 3.853	Dissimilar LOSS 0.020	
+
+ * Finished epoch  15  silhouette: 75.8%  best: 75.8%
+
+RGB Clustering criterion: eps: 0.500
+==> Create pseudo labels for camera4 unlabeled RGB data
+Extract Features: [50/94]	Time 0.313 (0.415)	Data 0.000 (0.077)	
+Computing jaccard distance...
+Jaccard distance computing time cost: 7.552375793457031
+==> Statistics for RGB epoch 16 cam4: 343 clusters
+Epoch: [16][10/50]	Time 0.453 (0.667)	Data 0.000 (0.172)	Loss 1.269 (1.247)	Loss cam 1.247	Dissimilar LOSS 0.022	
+Epoch: [16][20/50]	Time 0.463 (0.574)	Data 0.001 (0.086)	Loss 1.059 (1.233)	Loss cam 1.040	Dissimilar LOSS 0.020	
+Epoch: [16][30/50]	Time 0.523 (0.545)	Data 0.000 (0.058)	Loss 1.574 (1.204)	Loss cam 1.552	Dissimilar LOSS 0.022	
+Epoch: [16][40/50]	Time 0.462 (0.531)	Data 0.000 (0.043)	Loss 0.902 (1.131)	Loss cam 0.884	Dissimilar LOSS 0.017	
+Epoch: [16][50/50]	Time 0.519 (0.651)	Data 0.001 (0.160)	Loss 3.676 (1.579)	Loss cam 3.660	Dissimilar LOSS 0.017	
+
+ * Finished epoch  16  silhouette: 76.3%  best: 76.3% ****************
+
+RGB Clustering criterion: eps: 0.500
+==> Create pseudo labels for camera4 unlabeled RGB data
+Extract Features: [50/94]	Time 0.328 (0.417)	Data 0.000 (0.088)	
+Computing jaccard distance...
+Jaccard distance computing time cost: 7.355358839035034
+==> Statistics for RGB epoch 17 cam4: 344 clusters
+Epoch: [17][10/50]	Time 0.463 (0.608)	Data 0.001 (0.116)	Loss 1.263 (1.381)	Loss cam 1.237	Dissimilar LOSS 0.026	
+Epoch: [17][20/50]	Time 0.488 (0.547)	Data 0.001 (0.059)	Loss 0.964 (1.279)	Loss cam 0.946	Dissimilar LOSS 0.019	
+Epoch: [17][30/50]	Time 0.474 (0.526)	Data 0.000 (0.039)	Loss 0.815 (1.223)	Loss cam 0.796	Dissimilar LOSS 0.019	
+Epoch: [17][40/50]	Time 0.462 (0.518)	Data 0.000 (0.030)	Loss 1.099 (1.196)	Loss cam 1.077	Dissimilar LOSS 0.022	
+Epoch: [17][50/50]	Time 0.482 (0.700)	Data 0.001 (0.207)	Loss 4.109 (1.549)	Loss cam 4.092	Dissimilar LOSS 0.017	
+
+ * Finished epoch  17  silhouette: 76.6%  best: 76.6% ****************
+
+RGB Clustering criterion: eps: 0.500
+==> Create pseudo labels for camera4 unlabeled RGB data
+Extract Features: [50/94]	Time 0.330 (0.403)	Data 0.002 (0.067)	
+Computing jaccard distance...
+Jaccard distance computing time cost: 7.317890405654907
+==> Statistics for RGB epoch 18 cam4: 339 clusters
+Epoch: [18][10/50]	Time 0.468 (0.651)	Data 0.001 (0.148)	Loss 1.068 (1.341)	Loss cam 1.051	Dissimilar LOSS 0.016	
+Epoch: [18][20/50]	Time 0.495 (0.569)	Data 0.002 (0.074)	Loss 1.110 (1.273)	Loss cam 1.089	Dissimilar LOSS 0.021	
+Epoch: [18][30/50]	Time 0.497 (0.544)	Data 0.000 (0.050)	Loss 0.732 (1.218)	Loss cam 0.713	Dissimilar LOSS 0.019	
+Epoch: [18][40/50]	Time 0.464 (0.532)	Data 0.000 (0.037)	Loss 1.154 (1.181)	Loss cam 1.135	Dissimilar LOSS 0.019	
+Epoch: [18][50/50]	Time 0.485 (0.628)	Data 0.001 (0.135)	Loss 4.764 (1.597)	Loss cam 4.746	Dissimilar LOSS 0.018	
+
+ * Finished epoch  18  silhouette: 77.2%  best: 77.2% ****************
+
+RGB Clustering criterion: eps: 0.500
+==> Create pseudo labels for camera4 unlabeled RGB data
+Extract Features: [50/94]	Time 0.282 (0.380)	Data 0.000 (0.060)	
+Computing jaccard distance...
+Jaccard distance computing time cost: 7.3030030727386475
+==> Statistics for RGB epoch 19 cam4: 338 clusters
+Epoch: [19][10/50]	Time 0.458 (0.665)	Data 0.001 (0.169)	Loss 1.642 (1.382)	Loss cam 1.621	Dissimilar LOSS 0.021	
+Epoch: [19][20/50]	Time 0.486 (0.575)	Data 0.001 (0.085)	Loss 1.023 (1.299)	Loss cam 1.001	Dissimilar LOSS 0.022	
+Epoch: [19][30/50]	Time 0.457 (0.544)	Data 0.000 (0.057)	Loss 0.870 (1.245)	Loss cam 0.849	Dissimilar LOSS 0.022	
+Epoch: [19][40/50]	Time 0.492 (0.529)	Data 0.000 (0.043)	Loss 0.684 (1.165)	Loss cam 0.666	Dissimilar LOSS 0.018	
+Epoch: [19][50/50]	Time 0.451 (0.617)	Data 0.001 (0.129)	Loss 4.199 (1.561)	Loss cam 4.182	Dissimilar LOSS 0.017	
+
+ * Finished epoch  19  silhouette: 77.6%  best: 77.6% ****************
+
+Total running time:  0:26:37.434171
