@@ -144,7 +144,7 @@ class ClusterContrastTrainer(object):
             
 
             if r2i:
-                if type(i2r[1]) == list:              # 如果rgb簇多于ir簇
+                if type(i2r[1]) == list:             
                     rgb2ir_labels = torch.tensor([r2i[key.item()] for key in labels_rgb]).cuda()
                     ir2rgb_labels = torch.tensor([i2r[key.item()][0] for key in labels_ir]).cuda()   # !!!!!!!
 
@@ -152,7 +152,6 @@ class ClusterContrastTrainer(object):
                     
                     ###############################    
                     if lamba_mate != 0:
-                        # 同一ir关联的多个rgb相互约束  !!!    rgb->lable_rgb->lable_ir->lable_rgb0和lable_rgb1
                         label_rgb=[]
                         delete_idx = []
                         for index,label in enumerate(labels_rgb):
@@ -181,7 +180,7 @@ class ClusterContrastTrainer(object):
                         else:
                             loss_mate = torch.tensor(0)
                     ##############################################       
-                else:              # 如果ir簇多于rgb簇
+                else:             
                     rgb2ir_labels = torch.tensor([r2i[key.item()][0] for key in labels_rgb]).cuda()
                     ir2rgb_labels = torch.tensor([i2r[key.item()] for key in labels_ir]).cuda()  
                     
@@ -189,7 +188,6 @@ class ClusterContrastTrainer(object):
                     
                     ###############################    
                     if lamba_mate != 0:
-                        # 同一rgb关联的多个ir相互约束  !!!    ir->lable_ir->lable_rgb->lable_ir0和lable_ir1
                         label_ir=[]
                         delete_idx = []
                         for index,label in enumerate(labels_ir):
