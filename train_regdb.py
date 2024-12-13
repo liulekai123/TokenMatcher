@@ -681,7 +681,7 @@ def main_worker_stage2(args,log_s1_name,log_s2_name):
                 pseudo_labeled_dataset_rgb.append((fname, label.item(), cid))
         print('==> Statistics for RGB epoch {}: {} clusters'.format(epoch, num_cluster_rgb))
         
-        ############################################# 邻居学习：各个token的邻居和cam的邻居的交集       
+        #############################################   
         num_ir_imgs = dataset_ir.num_train_imgs
         num_rgb_imgs = dataset_rgb.num_train_imgs
         memory_instance_ir = ClusterMemory(768*cls_token_num, num_ir_imgs, temp=args.temp, momentum=args.momentum0, use_hard=args.use_hard)
@@ -700,7 +700,7 @@ def main_worker_stage2(args,log_s1_name,log_s2_name):
         def hebing(list1,list2):
             merged_list = []
             for i,(row1, row2) in enumerate(zip(list1, list2)):
-                merged_list.append(row1 + row2)   # numpy 的+表示对应元素相加
+                merged_list.append(row1 + row2)   # 
             return merged_list
         def sort_by_frequency_unique(row, X):
             count = Counter(row)
@@ -735,8 +735,6 @@ def main_worker_stage2(args,log_s1_name,log_s2_name):
         ######################################  R2I
         cluster_features_rgb = F.normalize(cluster_features_rgb, dim=1)
         cluster_features_ir = F.normalize(cluster_features_ir, dim=1)
-        # 全局的最相似最优先匹配，若该最小值的ir标签已经被分配，如果这个ir标签只被分配有一个rgb，则该最小值分配给这个ir标签。
-        #                                                      如果这个ir标签被分配2个rgb，则该最小值跳过。
         print("Matching!!!")
         if num_cluster_rgb >= num_cluster_ir:
             # clusternorm
