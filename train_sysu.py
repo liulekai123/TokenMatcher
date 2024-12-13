@@ -408,10 +408,7 @@ def main_worker_stage1(args,log_s1_name):
     
     # Optimizer
     params = [{"params": [value]} for _, value in model.named_parameters() if value.requires_grad]
-    #optimizer = torch.optim.Adam(params, lr=args.lr, weight_decay=args.weight_decay)  !!!!!!!!!!!!!!!!!!
-    # 必须使用SGD，否则训练不收敛。不知道为什么???????????
     optimizer = torch.optim.SGD(params, lr=args.lr0, momentum=0.9, weight_decay=args.weight_decay0) 
-    #lr_scheduler = torch.optim.lr_scheduler.StepLR(optimizer, step_size=args.step_size, gamma=0.1)
     lr_scheduler = torch.optim.lr_scheduler.CosineAnnealingLR(optimizer, T_max=50, eta_min=1e-6)
     
     # Trainer
@@ -753,7 +750,7 @@ def main_worker_stage2(args,log_s1_name,log_s2_name):
     lr_scheduler = torch.optim.lr_scheduler.CosineAnnealingLR(optimizer, T_max=50, eta_min=1e-7)  # 1e-7
 
     # Trainer
-    trainer = ClusterContrastTrainer(model)   ####################camTokens
+    trainer = ClusterContrastTrainer(model)   ####################
     for epoch in range(args.epochs):
         @torch.no_grad()
         def generate_cluster_features(labels, features):
@@ -839,7 +836,7 @@ def main_worker_stage2(args,log_s1_name,log_s2_name):
             camid_rgb.append(cid)
         print('==> Statistics for RGB epoch {}: {} clusters'.format(epoch, num_cluster_rgb))
 
-        ############################################# 邻居学习：各个token的邻居和cam的邻居的交集       
+        #############################################
         if args.lamba_neighbor == 0:
             topk_rgb = None
             topk_ir = None
@@ -864,7 +861,7 @@ def main_worker_stage2(args,log_s1_name,log_s2_name):
             def hebing(list1,list2):
                 merged_list = []
                 for i,(row1, row2) in enumerate(zip(list1, list2)):
-                    merged_list.append(row1 + row2)   # numpy 的+表示对应元素相加
+                    merged_list.append(row1 + row2)   
                 return merged_list
             def sort_by_frequency_unique(row, X):
                 count = Counter(row)
@@ -994,14 +991,14 @@ def main_worker_stage2(args,log_s1_name,log_s2_name):
         del index_f_ir,index_f_rgb,camid_rgb,camid_ir
         ##############################
         
-        ########################################################## R2I
+        ########################################################## 
         cluster_features_rgb = F.normalize(cluster_features_rgb, dim=1)
         cluster_features_ir = F.normalize(cluster_features_ir, dim=1)
         
         print("Matching!!!")
         if num_cluster_rgb >= num_cluster_ir:
             # clusternorm
-            similarity = ((torch.mm(cluster_features_rgb, cluster_features_ir.T))/1).exp().cpu() # Corresponding Calculate
+            similarity = ((torch.mm(cluster_features_rgb, cluster_features_ir.T))/1).exp().cpu() 
             cost = similarity / 1   
             cost_1 = cost.clone()
             
