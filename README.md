@@ -1,5 +1,5 @@
 # TokenMatcher: Diverse Tokens Matching for Unsupervised Visible-Infrared Person Re-Identification
-<img src="https://github.com/liulekai123/TokenMatcher/tree/main/examples/pipeline.png">
+<img src="https://raw.githubusercontent.com/liulekai123/TokenMatcher/main/examples/pipeline.png" />
 This is a code implementation and supplement to TokenMatcher: Diverse Tokens Matching for Unsupervised Visible-Infrared Person Re-Identification, which was accepted by AAAI 2025.
 
 # Contributions
