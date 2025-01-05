@@ -1,5 +1,5 @@
 # TokenMatcher: Diverse Tokens Matching for Unsupervised Visible-Infrared Person Re-Identification
-TokenMatcher: Diverse Tokens Matching for Unsupervised Visible-Infrared Person Re-Identification
+This is a code implementation and supplement to TokenMatcher: Diverse Tokens Matching for Unsupervised Visible-Infrared Person Re-Identification, which was accepted by AAAI 2025.
 
 # Contributions
 1. We introduce a TokenMatcher, a novel framework designed to extract reliable cross-modality fine-grained person features, facilitating accurate cross-modality correspondences.
