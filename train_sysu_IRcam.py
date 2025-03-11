@@ -373,9 +373,8 @@ def main():
         torch.manual_seed(args.seed)
         cudnn.deterministic = True
         cudnn.benchmark = False
-    log_s1_name = 'sysu_s1_aug_basetokens4_m0.2_coslr3.5e-4'
+    log_s1_name = 'sysu_s1'
     log_s2_name = 'sysu_cam'
-    #main_worker_stage1(args,log_s1_name) # Stage 1
     main_worker_stage2(args,log_s1_name,log_s2_name) # Stage 2
 
 
