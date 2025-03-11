@@ -375,7 +375,6 @@ def main():
         cudnn.benchmark = False
     log_s1_name = 'sysu_s1'
     log_s2_name = 'sysu_cam'
-    #main_worker_stage1(args,log_s1_name) # Stage 1
     main_worker_stage2(args,log_s1_name,log_s2_name) # Stage 2
 
 
@@ -624,7 +623,7 @@ if __name__ == '__main__':
 
     parser.add_argument('--lamba-mate', type=float, default=0.05)  #########################
     parser.add_argument('--lamba-cross', type=float, default=0.5)
-    parser.add_argument('--cls-token-num', type=int, default=1)
+    parser.add_argument('--cls-token-num', type=int, default=4)
     parser.add_argument('--k', type=float, default=50)
     parser.add_argument('--x', type=int, default=50)
     parser.add_argument('--cam-id', type=int, default=1)
